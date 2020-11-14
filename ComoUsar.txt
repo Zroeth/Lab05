@@ -1,0 +1,15 @@
+Para ZigZag
+Body formdata
+key: files	value: select file
+Key: carriles: (entero) número
+
+Para Caesar
+Body formdata
+key: files	value: select file
+Key: llave 	value: (texto) palabra
+
+Para Ruta 
+Body formdata
+key: files	value: select file
+key: tamaño 	value: (entero) número
+	
