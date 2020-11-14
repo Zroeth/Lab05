@@ -22,7 +22,7 @@ namespace Lab05
             txtcifrado = txtcifrado.Replace("┼", "");
             List<char> bytecompress = new List<char>();
 
-            root = root + @"\\Upload\\Vertical\\cifrado.Ruta";
+            root = root + @"\\Upload\\Ruta\\cifrado.Ruta";
             using (StreamWriter outputFile = new StreamWriter(root))
             {
                 foreach (char caracter in txtcifrado)
@@ -45,7 +45,7 @@ namespace Lab05
             Ruta descifrado = new Ruta(texto, tamaño);
             string txtdescifrado = descifrado.Descifrado();
             txtdescifrado = txtdescifrado.Replace("┼", "");
-            root = root + @"\\Upload\\Vertical\\descifradoRuta.txt";
+            root = root + @"\\Upload\\Ruta\\descifradoRuta.txt";
             txtdescifrado = txtdescifrado.Replace("↔", "");
             using (StreamWriter outputFile = new StreamWriter(root))
             {

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Mime;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -40,19 +42,15 @@ namespace Lab05
                     {
                         Directory.CreateDirectory(_environment.WebRootPath + "\\Upload\\");
                     }
-                    using (FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName))
-                    {
-                        objFile.files.CopyTo(fileStream);
-                        fileStream.Flush();
-                        fileStream.Close();
-                        string s = @_environment.WebRootPath;
-                        //Implementacion imp = new Implementacion(fileStream.Name, s);
-                        ImplementationZigZag.Cifrado(fileStream.Name, s, objFile.carriles);
+                    using FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName);
+                    objFile.files.CopyTo(fileStream);
+                    fileStream.Flush();
+                    fileStream.Close();
+                    string s = @_environment.WebRootPath;
+                    ImplementationZigZag.Cifrado(fileStream.Name, s, objFile.carriles);
 
-                        return Ok("Revisar Archivos en Parte3/wwww.root");
 
-                    }
-
+                    return File( @"\Upload\ZigZag\cifrado.ZigZag", "text/JSON");
 
                 }
                 else
@@ -82,20 +80,16 @@ namespace Lab05
                     {
                         Directory.CreateDirectory(_environment.WebRootPath + "\\Upload\\");
                     }
-                    using (FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName))
-                    {
-                        objFile.files.CopyTo(fileStream);
-                        fileStream.Flush();
-                        fileStream.Close();
-                        string s = @_environment.WebRootPath;
+                    using FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName);
+                    objFile.files.CopyTo(fileStream);
+                    fileStream.Flush();
+                    fileStream.Close();
+                    string s = @_environment.WebRootPath;
 
-                        ImplementationZigZag.Descifrado(fileStream.Name, s, objFile.carriles);
+                    ImplementationZigZag.Descifrado(fileStream.Name, s, objFile.carriles);
 
 
-                        return Ok("Revisar Archivos en Parte3/wwww.root");
-
-                    }
-
+                    return File(@"\Upload\ZigZag\descifradoZigZag.txt", "text/JSON");
 
                 }
                 else
@@ -125,19 +119,16 @@ namespace Lab05
                     {
                         Directory.CreateDirectory(_environment.WebRootPath + "\\Upload\\");
                     }
-                    using (FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName))
-                    {
-                        objFile.files.CopyTo(fileStream);
-                        fileStream.Flush();
-                        fileStream.Close();
+                    using FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName);
+                    objFile.files.CopyTo(fileStream);
+                    fileStream.Flush();
+                    fileStream.Close();
 
-                        string s = @_environment.WebRootPath;
-                        //Implementacion imp = new Implementacion(fileStream.Name, s);
-                        ImplementationCaesar.Cifrado(fileStream.Name, s, objFile.llave);
-                        llaveOriginal = objFile.llave;
-                        return Ok("Revisar Archivos en Parte3/wwww.root");
+                    string s = @_environment.WebRootPath;
+                    ImplementationCaesar.Cifrado(fileStream.Name, s, objFile.llave);
+                    llaveOriginal = objFile.llave;
 
-                    }
+                    return File(@"\\Upload\\Caesar\\cifrado.Caesar", "text/JSON");
                 }
                 else
                 {
@@ -171,19 +162,15 @@ namespace Lab05
                         {
                             Directory.CreateDirectory(_environment.WebRootPath + "\\Upload\\");
                         }
-                        using (FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName))
-                        {
-                            objFile.files.CopyTo(fileStream);
-                            fileStream.Flush();
-                            fileStream.Close();
-                            string s = @_environment.WebRootPath;
+                        using FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName);
+                        objFile.files.CopyTo(fileStream);
+                        fileStream.Flush();
+                        fileStream.Close();
+                        string s = @_environment.WebRootPath;
 
-                            ImplementationCaesar.Descifrado(fileStream.Name, s, objFile.llave);
+                        ImplementationCaesar.Descifrado(fileStream.Name, s, objFile.llave);
 
-
-                            return Ok("Revisar Archivos en Parte3/wwww.root");
-
-                        }
+                        return File(@"\\Upload\\Caesar\\descifradoCaesar.txt", "text/JSON");
                     }
                     else
                     {
@@ -218,18 +205,14 @@ namespace Lab05
                     {
                         Directory.CreateDirectory(_environment.WebRootPath + "\\Upload\\");
                     }
-                    using (FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName))
-                    {
-                        objFile.files.CopyTo(fileStream);
-                        fileStream.Flush();
-                        fileStream.Close();
-                        string s = @_environment.WebRootPath;
-                        //Implementacion imp = new Implementacion(fileStream.Name, s);
-                        ImplementationRuta.Cifrado(fileStream.Name, s, objFile.tamaño);
+                    using FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName);
+                    objFile.files.CopyTo(fileStream);
+                    fileStream.Flush();
+                    fileStream.Close();
+                    string s = @_environment.WebRootPath;
+                    ImplementationRuta.Cifrado(fileStream.Name, s, objFile.tamaño);
 
-                        return Ok("Revisar Archivos en Parte3/wwww.root");
-
-                    }
+                    return File(@"\\Upload\\Ruta\\cifrado.Ruta", "text/JSON");
 
 
                 }
@@ -260,19 +243,17 @@ namespace Lab05
                     {
                         Directory.CreateDirectory(_environment.WebRootPath + "\\Upload\\");
                     }
-                    using (FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName))
-                    {
-                        objFile.files.CopyTo(fileStream);
-                        fileStream.Flush();
-                        fileStream.Close();
-                        string s = @_environment.WebRootPath;
+                    using FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName);
+                    objFile.files.CopyTo(fileStream);
+                    fileStream.Flush();
+                    fileStream.Close();
+                    string s = @_environment.WebRootPath;
 
-                        ImplementationRuta.Descifrado(fileStream.Name, s, objFile.tamaño);
+                    ImplementationRuta.Descifrado(fileStream.Name, s, objFile.tamaño);
 
 
-                        return Ok("Revisar Archivos en Parte3/wwww.root");
+                    return File(@"\\Upload\\Ruta\\descifradoRuta.txt", "text/JSON");
 
-                    }
 
 
                 }

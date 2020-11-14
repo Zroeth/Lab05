@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Zer0\\source\\repos\\Lab05\\Lab05\\Parte2\\Parte2.csproj": {}
+    "C:\\Users\\Zer0\\source\\repos\\Lab05\\Nueva carpeta\\Lab05\\Parte2\\Parte2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zer0\\source\\repos\\Lab05\\Lab05\\Parte2\\Parte2.csproj": {
+    "C:\\Users\\Zer0\\source\\repos\\Lab05\\Nueva carpeta\\Lab05\\Parte2\\Parte2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zer0\\source\\repos\\Lab05\\Lab05\\Parte2\\Parte2.csproj",
+        "projectUniqueName": "C:\\Users\\Zer0\\source\\repos\\Lab05\\Nueva carpeta\\Lab05\\Parte2\\Parte2.csproj",
         "projectName": "Parte2",
-        "projectPath": "C:\\Users\\Zer0\\source\\repos\\Lab05\\Lab05\\Parte2\\Parte2.csproj",
+        "projectPath": "C:\\Users\\Zer0\\source\\repos\\Lab05\\Nueva carpeta\\Lab05\\Parte2\\Parte2.csproj",
         "packagesPath": "C:\\Users\\Zer0\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zer0\\source\\repos\\Lab05\\Lab05\\Parte2\\obj\\",
+        "outputPath": "C:\\Users\\Zer0\\source\\repos\\Lab05\\Nueva carpeta\\Lab05\\Parte2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "D:\\Roaming\\NuGet\\NuGet.Config",
